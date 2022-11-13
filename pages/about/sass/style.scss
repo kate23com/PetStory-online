@@ -1,5 +1,30 @@
-@import url(/PetStory-online/pages/about/sass/fonts.scss);
-@import url(/PetStory-online/pages/about/sass/__header.scss);
-@import url(/PetStory-online/pages/about/sass/__footer.scss);
-@import url(/PetStory-online/pages/about/sass/__media.scss);
-@import url(/PetStory-online/pages/about/sass/__vars.scss);
+@import './_normolise';
+@import './fonts.scss';
+@import './_vars';
+@import './_media';
+
+
+body {
+   @include roboto-regular;
+   font-size: 16px;
+   line-height: 22px;
+   color: $black-blue;
+   overflow: hidden;
+}
+
+.wrapper {
+   margin: 0 auto;
+}
+
+.circle {
+   @include button-circle;
+}
+
+.square {
+   @include button-square;
+}
+
+form {
+   @include emailform;
+   max-width: 228px;
+}

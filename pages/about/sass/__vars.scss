@@ -1,21 +1,276 @@
+//FONTS
+
+@mixin roboto-regular {
+   font-family: 'Roboto-Regular';
+   font-style: normal;
+   font-weight: 400;
+}
+
+%roboto-regular {
+   font-family: 'Roboto-Regular';
+   font-style: normal;
+   font-weight: 400;
+}
+
+@mixin roboto-medium {
+   font-family: 'Roboto-Medium';
+   font-style: normal;
+   font-weight: 500;
+}
+
+%roboto-medium {
+   font-family: 'Roboto-Medium';
+   font-style: normal;
+   font-weight: 500;
+}
+
+@mixin roboto-bold {
+   font-family: 'Roboto-Bold';
+   font-style: normal;
+   font-weight: 700;
+}
+
+%roboto-bold {
+   font-family: 'Roboto-Bold';
+   font-style: normal;
+   font-weight: 700;
+}
+
+@mixin roboto-light {
+   font-family: 'Roboto-Light';
+   font-style: normal;
+   font-weight: 300;
+}
+
+%roboto-light {
+   font-family: 'Roboto-Light';
+   font-style: normal;
+   font-weight: 300;
+}
+
+//SIZE
+
+@mixin title {
+   font-size: 48px;
+   line-height: 58px;
+}
+
+@mixin label {
+   font-size: 36px;
+   line-height: 47px;
+}
+
+@mixin subtitle {
+   font-size: 24px;
+   line-height: 29px;
+}
+
+@mixin text-light {
+   @include roboto-light();
+   font-size: 15px;
+   line-height: 18px;
+}
+
+@mixin logo {
+   font-size: 19px;
+   line-height: 23px;
+}
+
+@mixin text-media {
+   @include roboto-medium();
+   font-size: 16px;
+   line-height: 21px;
+}
+
+@mixin article {
+   @include roboto-medium();
+   font-size: 26px;
+   line-height: 36px;
+}
+
 //COLORS
 
+$black: #000000;
+$black-blue: #333B41;
+$frosted-glass-white: rgba(253, 253, 255, 0.52);
+$gray: #767474;
+$gray-light: #F1F3F2;
+$gray-smoky: #ABABAB;
 $green: #4B9200;
-$orange: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
-$yellow: #FFEE2E;
-$orange-grad: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%),
+$orange: #FE9013;
+$orange-hover: #E47209;
+$orange-grad-deep: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+$orange-grad-light: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100%, rgba(254, 210, 144, 0.7) 106.36%),
    linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%),
    linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 $pink-gradient: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%),
    linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 $rad: #D31414;
-$black-blue: #333B41;
-$gray: #767474;
-$gray-smoky: #ABABAB;
-$light-gray: #F1F3F2;
-$frosted-glass-white: rgba(253, 253, 255, 0.52);
+$white: #FFFFFF;
+$yellow: #FFEE2E;
 
+//BREAKPOINTS
+
+$breakpoint-xs: 320px;
+$breakpoint-s: 400px;
+$breakpoint-m: 640px;
+$breakpoint-l: 1000px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1440px;
+
+//PSEUDO-CLASSES
+@mixin pseudo-classes-button {
+   &:hover {
+      background: $orange-hover;
+   }
+
+   &:active {
+      background: $green;
+   }
+
+   &:disabled {
+      background: $gray;
+   }
+}
+
+@mixin button-icons {
+   &:hover {
+      border: 1px solid $green;
+      border-radius: 2px;
+      padding: 11px;
+   }
+
+}
+
+@mixin pseudo-classes-button-other {
+   &:active {
+      background-color: $green;
+   }
+}
+
+@mixin pseudo-classes-form {
+   &:active {
+      border: 1px solid $green;
+
+      ::placeholder {
+         color: $green;
+      }
+   }
+
+   &:invalid {
+      border: 1px solid $rad;
+
+      ::placeholder {
+         color: $rad;
+      }
+   }
+}
+
+
+@mixin pseudo-classes-link-view {
+   &:active {
+      color: $orange-grad-deep;
+   }
+}
+
+@mixin pseudo-classes-link-designer {
+   &:active {
+      color: $green;
+      text-decoration: underline;
+   }
+}
+
+@mixin pseudo-classes-overall {
+   &:hover {
+      color: $orange;
+   }
+
+   &:active {
+      color: $green;
+   }
+}
 
 //BUTTONS
 
-@mixin button-circle {}
+@mixin button-circle {
+   @include roboto-medium();
+   font-size: 16px;
+   color: $white;
+   text-transform: uppercase;
+   background-image: $orange-grad-deep;
+   border-radius: 25px;
+   padding: 16px 73px;
+   @include pseudo-classes-button();
+}
+
+@mixin button-square {
+   @include roboto-medium();
+   font-size: 16px;
+   color: $white;
+   text-transform: uppercase;
+   background-image: $orange-grad-deep;
+   border-radius: 5px;
+   padding: 16px 84px;
+   @include pseudo-classes-button();
+}
+
+@mixin button-submit {
+   font-size: 16px;
+   line-height: 22px;
+   color: $black;
+   border: 1px solid $black-blue;
+   border-radius: 2px;
+   padding: 16px 39px;
+   @include pseudo-classes-form();
+}
+
+@mixin button-arrow {
+   background-image: $orange-grad-deep;
+   padding: 25px;
+   border-radius: 50%;
+   border: none;
+   @include pseudo-classes-button-other()
+}
+
+//FORMS
+
+@mixin email-form {
+   border: 1px solid $orange;
+   border-radius: 2px;
+   padding: 10px 0;
+
+   &::placeholder {
+      color: $gray;
+   }
+
+   @include pseudo-classes-form();
+}
+
+@mixin another-form {
+   border: 1px solid $yellow;
+   border-radius: 2px;
+   background-color: $black-blue;
+   padding: 16px 0;
+
+   ::placeholder {
+      color: $white;
+   }
+
+   @include pseudo-classes-form();
+}
+
+//LINKS
+
+@mixin view-map {
+   line-height: 22px;
+   text-transform: uppercase;
+   color: $green;
+   @include pseudo-classes-link-view();
+}
+
+@mixin designer {
+   @include roboto-light();
+   line-height: 21px;
+   color: $white;
+   @include pseudo-classes-link-designer();
+}
