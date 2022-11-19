@@ -72,8 +72,15 @@
 }
 
 @mixin logo {
+   @include roboto-regular();
    font-size: 19px;
    line-height: 23px;
+}
+
+@mixin logo-mobile {
+   @include roboto-regular();
+   font-size: 12px;
+   line-height: 15px;
 }
 
 @mixin text-media {
@@ -112,11 +119,12 @@ $yellow: #FFEE2E;
 //BREAKPOINTS
 
 $breakpoint-xs: 320px;
-$breakpoint-s: 400px;
-$breakpoint-m: 640px;
-$breakpoint-l: 1000px;
-$breakpoint-xl: 1200px;
-$breakpoint-xxl: 1440px;
+$breakpoint-s: 380px;
+$breakpoint-m: 520px;
+$breakpoint-l: 640px;
+$breakpoint-xl: 1000px;
+$breakpoint-xxl: 1200px;
+$breakpoint-xxxl: 1440px;
 
 //PSEUDO-CLASSES
 @mixin pseudo-classes-button {
@@ -273,4 +281,40 @@ $breakpoint-xxl: 1440px;
    line-height: 21px;
    color: $white;
    @include pseudo-classes-link-designer();
+}
+
+//FLEX
+
+@mixin flex-start {
+   display: flex;
+   justify-content: flex-start;
+}
+
+@mixin flex-center {
+   display: flex;
+   justify-content: center;
+}
+
+@mixin flex-end {
+   display: flex;
+   justify-content: flex-end;
+}
+
+@mixin flex-beetwen {
+   display: flex;
+   justify-content: space-between;
+}
+
+//GRID
+
+@mixin grid-column {
+   display: grid;
+   grid-auto-flow: column;
+   align-items: center;
+}
+
+@mixin grid-row {
+   display: grid;
+   justify-items: center;
+   align-items: center;
 }

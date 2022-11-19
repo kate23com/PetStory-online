@@ -5,10 +5,6 @@ html {
    -moz-text-size-adjust: 100%;
 }
 
-body {
-   margin: 0;
-}
-
 html,
 body {
    height: 100%;
@@ -21,6 +17,12 @@ header,
 aside,
 main {
    display: block;
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
 }
 
 *,
@@ -36,15 +38,23 @@ main {
    outline: none;
 }
 
-a:focus,
-a:active {
-   outline: none;
+a {
+   background-color: transparent;
 }
 
-h1 {
-   font-size: 2em;
-   margin: 0.67em 0;
+a,
+a:visited {
+   text-decoration: none;
 }
+
+a:hover {
+   text-decoration: none;
+}
+
+// h1 {
+//    font-size: 2em;
+//    margin: 0.67em 0;
+// }
 
 hr {
    box-sizing: content-box;
@@ -55,10 +65,6 @@ hr {
 pre {
    font-family: monospace, monospace;
    font-size: 1em;
-}
-
-a {
-   background-color: transparent;
 }
 
 ul li {
@@ -128,6 +134,10 @@ textarea {
 button,
 input {
    overflow: visible;
+}
+
+input::-ms-clear {
+   display: none;
 }
 
 button,

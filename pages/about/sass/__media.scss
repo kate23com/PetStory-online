@@ -1,12 +1,57 @@
-@import url(./__vars.scss);
+@media (min-width: $breakpoint-s) {
+   .watch {
+      background-position: center 0;
+      background-size: auto 260px;
 
-@media screen and(min-width: $breakpoint-xs) {
-   
+      &__body {
+         grid-template: 1fr 80px 50px/1fr;
+      }
+
+      &__circle {
+         width: 179px;
+         height: 179px;
+      }
+
+      &__title {
+         font-size: 41px;
+         line-height: 31px;
+      }
+   }
 }
 
-@media screen and(min-width: $breakpoint-s) {}
+@media (min-width: $breakpoint-s) {
+   .watch {
+      background-size: 100% 260px;
+      background-position: 0 0;
+   }
+}
 
-@media screen and(min-width: $breakpoint-m) {}
-@media screen and(min-width: $breakpoint-l) {}
-@media screen and(min-width: $breakpoint-xl) {}
-@media screen and(min-width: $breakpoint-xxl) {}
+@media (min-width: $breakpoint-l) {
+   .watch {
+      background-size: cover;
+
+
+      &__body {
+         display: grid;
+         justify-items: center;
+         align-items: center;
+         grid-template: 1fr 50px 40px/1fr;
+      }
+
+      &__circle {
+         width: 238px;
+         height: 238px;
+         margin: 10px 45px 0 0;
+      }
+
+      &__title {
+         font-size: 54px;
+         line-height: 41px;
+      }
+
+      &__button-body {
+         grid-row: 2/3;
+         justify-self: start;
+      }
+   }
+}

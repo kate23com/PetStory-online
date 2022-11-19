@@ -1,0 +1,39 @@
+body {
+   @include roboto-regular;
+   font-size: 16px;
+   line-height: 22px;
+   color: $black-blue;
+   overflow-x: hidden;
+}
+
+.wrapper {
+   display: grid;
+   min-height: 100%;
+   grid-template: minmax(34px, auto) 1fr minmax(280px, auto)/1fr;
+   margin: 0 auto;
+}
+
+.container {
+   padding: 0 10px;
+   margin: 0 auto;
+}
+
+@media screen and(min-width:$breakpoint-l) {
+   .container {
+      padding: 0 20px;
+   }
+}
+
+@media screen and(min-width:$breakpoint-xl) {
+   .container {
+      padding: 0;
+      max-width: 940px;
+   }
+}
+
+@media screen and(min-width:$breakpoint-xxxl) {
+   .container {
+      padding: 0;
+      max-width: 1160px;
+   }
+}
